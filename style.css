@@ -1,3 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at top left, #0a0a0a, #111, #1a1a1a);
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* Effet néon global */
+h1, h2 {
+  color: #00ffff;
+  text-shadow:
+    0 0 5px #00ffff,
+    0 0 10px #00ffff,
+    0 0 20px #00ffff,
+    0 0 40px #00ffff;
+}
+
+/* Outline animé autour du titre */
+h1 {
+  font-size: 3em;
+  letter-spacing: 2px;
+  position: relative;
+  animation: glowPulse 3s infinite alternate;
+}
+
+@keyframes glowPulse {
+  from {
+    text-shadow:
+      0 0 5px #00ffff,
+      0 0 10px #00ffff,
+      0 0 20px #00ffff,
+      0 0 40px #00ffff;
+  }
+  to {
+    text-shadow:
+      0 0 10px #00ffff,
+      0 0 20px #00ffff,
+      0 0 40px #00ffff,
+      0 0 80px #00ffff;
+  }
+}
+
+/* Cartes avec glow */
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  margin: 30px auto;
+  padding: 20px;
+  border-radius: 12px;
+  width: 80%;
+  max-width: 600px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
+}
+
+/* Animation d’apparition */
+.fade-in {
+  animation: fadeIn 1.5s ease forwards;
+}
+
+.slide-up {
+  animation: slideUp 1.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Footer discret */
+footer {
+  margin-top: 50px;
+  padding: 20px;
+  font-size: 0.9em;
+  color: #aaa;
+  text-shadow: 0 0 5px #00ffff;
+}
 body {
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
