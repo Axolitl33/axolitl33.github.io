@@ -5,6 +5,29 @@ html, body {
   width: 100%;
   margin: 0;
   padding: 0;
+  background: radial-gradient(circle at top, #000000 0%, #0a1a1f 60%, #000000 100%);
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Pour que le fond prenne toute la largeur */
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  background-attachment: fixed; /* le fond reste collé même quand tu scroll */
+  background-size: cover; /* étire le fond sur tout l’écran */
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
   background-color: #000; /* fond noir total */
   color: #fff;
   font-family: 'Poppins', sans-serif;
