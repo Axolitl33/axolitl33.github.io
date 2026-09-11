@@ -2,7 +2,6 @@
 const ADMIN_PASSWORD = "Fvfv324567._.";
 
 document.addEventListener("DOMContentLoaded", () => {
-  const loginBtn = document.getElementById("admin-login-btn");
   const adminZone = document.getElementById("admin-zone");
   const passwordInput = document.getElementById("admin-password");
   const validateBtn = document.getElementById("admin-validate-btn");
@@ -15,29 +14,18 @@ document.addEventListener("DOMContentLoaded", () => {
     lettreContenu.innerHTML = savedText;
   }
 
-  // Par défaut, le bouton admin est caché
-  if (loginBtn) {
-    loginBtn.style.display = "none";
-  }
+  // Bloc admin caché par défaut
+  adminZone.style.display = "none";
 
-  // Afficher le bouton admin avec Ctrl + Shift + I
+  // Afficher le bloc admin avec Ctrl + Shift + I
   document.addEventListener("keydown", (e) => {
     if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "i") {
-      if (loginBtn) {
-        loginBtn.style.display = "block";
-        loginBtn.style.opacity = "0.3";
-        alert("Mode admin activé temporairement.");
-      }
+      adminZone.style.display = "block";
+      alert("Mode admin activé.");
     }
   });
 
-  // Connexion admin
-  if (!loginBtn) return;
-
-  loginBtn.addEventListener("click", () => {
-    adminZone.style.display = "block";
-  });
-
+  // Validation du mot de passe
   validateBtn.addEventListener("click", () => {
     if (passwordInput.value === ADMIN_PASSWORD) {
       lettreContenu.contentEditable = "true";
@@ -48,6 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  // Sauvegarde du texte
   saveBtn.addEventListener("click", () => {
     localStorage.setItem("lettre_motivation", lettreContenu.innerHTML);
     alert("Lettre sauvegardée.");
