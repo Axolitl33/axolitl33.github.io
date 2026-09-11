@@ -36,3 +36,21 @@ document.addEventListener("DOMContentLoaded", () => {
     alert("Lettre sauvegardée.");
   });
 });
+.admin-link {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: #00ffff;
+  font-size: 14px;
+  opacity: 0.3;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.admin-link:hover {
+  opacity: 1;
+  text-shadow: 0 0 8px #00ffff;
+}
+
