@@ -86,3 +86,40 @@ body {
   background-attachment: fixed;
   min-height: 100vh;
 }
+
+/* ========================= */
+/*   CENTRAGE DU TEXTE CV    */
+/* ========================= */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;     /* centre horizontalement */
+  justify-content: center; /* équilibre verticalement */
+  text-align: center;      /* centre le texte */
+}
+
+/* Paragraphes + listes centrés */
+.card p,
+.card ul,
+.card li {
+  text-align: center;
+  margin: 6px 0;
+  padding: 0;
+}
+
+/* Enlève les puces normales */
+.card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Ajoute les puces glow turquoise */
+.card ul li::before {
+  content: "•";
+  color: #00ffff;
+  text-shadow: 0 0 6px #00ffff;
+  margin-right: 8px;
+}
+
