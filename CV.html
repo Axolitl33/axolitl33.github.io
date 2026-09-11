@@ -93,3 +93,30 @@
   text-shadow: 0 0 6px #00ffff;
   margin-right: 8px;
 }
+
+/* ✅ Centrage du texte dans les cartes */
+.card {
+  text-align: center;
+}
+
+/* ✅ Centrage des paragraphes et listes */
+.card p,
+.card ul,
+.card li {
+  text-align: center;
+  margin: 6px 0;
+}
+
+/* ✅ Correction des puces glow */
+.card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.card ul li::before {
+  content: "•";
+  color: #00ffff;
+  text-shadow: 0 0 6px #00ffff;
+  margin-right: 8px;
+}
+
