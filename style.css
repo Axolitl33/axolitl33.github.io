@@ -115,11 +115,10 @@ body {
   margin: 0;
 }
 
-/* Ajoute les puces glow turquoise */
+/* ❗ Version qui centre vraiment : puce au-dessus */
 .card ul li::before {
-  content: "•";
-  color: #00ffff;
-  text-shadow: 0 0 6px #00ffff;
-  margin-right: 8px;
+  content: "";
+  display: block;
+  height: 0;
+  margin: 0;
 }
-
