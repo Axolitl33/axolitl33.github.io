@@ -60,15 +60,9 @@ h1, h2 {
   line-height: 1.6;
 }
 
-/* Bouton admin discret */
-.admin-panel {
-  background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
-  border-radius: 12px;
-  width: 90%;
-  max-width: 700px;
-  margin: 20px auto;
-  padding: 15px;
-  backdrop-filter: blur(10px);
+@keyframes glowFlash {
+  0% { box-shadow: 0 0 0px #00ffff; }
+  50% { box-shadow: 0 0 20px #00ffff; }
+  100% { box-shadow: 0 0 0px #00ffff; }
 }
 
