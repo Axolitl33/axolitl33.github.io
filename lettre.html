@@ -8,15 +8,9 @@
   <script src="script.js" defer></script>
 </head>
 <body>
-  <body>
-  <section class="card admin-panel">
-<button id="admin-login-btn" class="admin-link">Connexion admin</button>
-    <div id="admin-zone" style="display:none;">
-      <input type="password" id="admin-password" placeholder="Mot de passe admin">
-      <button id="admin-validate-btn" class="btn">Valider</button>
-      <button id="admin-save-btn" class="btn" style="display:none;">Sauvegarder la lettre</button>
-    </div>
-  </section>
+  <!-- Bouton admin discret -->
+  <button id="admin-login-btn" class="admin-link">Connexion admin</button>
+
   <header>
     <h1>Lettre de motivation</h1>
     <p>Candidature pour un stage en milieu professionnel.</p>
@@ -24,25 +18,22 @@
 
   <section class="card">
     <div id="lettre-contenu" contenteditable="false" class="lettre-texte">
-      <p>Madame, Monsieur,</p>
+      <p>Bonjour, je m’appelle Nolann Dewulf</p>
       <p>
-        Actuellement élève au lycée, je suis à la recherche d’un stage en milieu professionnel
-        afin de découvrir le monde de l’entreprise et de développer mes compétences en informatique
-        et cybersécurité.
-      </p>
-      <p>
-        Sérieux, motivé et curieux, je souhaite intégrer votre structure pour observer et apprendre
-        auprès de professionnels expérimentés.
-      </p>
-      <p>
-        Je reste à votre disposition pour toute information complémentaire.
-      </p>
-      <p>
-        Cordialement,<br>
-        Nolann Dewulf
+        Je suis intéressé par votre entreprise pour mon stage. Vous avez sûrement vu mon CV dans le lien Canva,
+        sachez que j’apprends très vite et que j’ai de très bonnes bases en informatique.
       </p>
     </div>
   </section>
+
+  <section class="card admin-panel">
+    <div id="admin-zone" style="display:none;">
+      <input type="password" id="admin-password" placeholder="Mot de passe admin">
+      <button id="admin-validate-btn" class="btn">Valider</button>
+      <button id="admin-save-btn" class="btn" style="display:none;">Sauvegarder la lettre</button>
+    </div>
+  </section>
+
   <footer>
     <p>Lettre de motivation — Nolann Dewulf</p>
   </footer>
