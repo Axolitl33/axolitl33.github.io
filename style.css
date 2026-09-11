@@ -80,3 +80,9 @@ h1, h2 {
   100% { box-shadow: 0 0 0px #00ffff; }
 }
 
+body {
+  background: radial-gradient(circle at top, #000000 0%, #0a1a1f 60%, #000000 100%);
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
