@@ -7,6 +7,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const validateBtn = document.getElementById("admin-validate-btn");
   const saveBtn = document.getElementById("admin-save-btn");
   const lettreContenu = document.getElementById("lettre-contenu");
+  const loginBtn = document.getElementById("admin-login-btn");
+
+  // Cache tout au démarrage
+  if (loginBtn) loginBtn.style.display = "none";
+  if (adminZone) adminZone.style.display = "none";
 
   // Charger la version sauvegardée si elle existe
   const savedText = localStorage.getItem("lettre_motivation");
@@ -14,14 +19,14 @@ document.addEventListener("DOMContentLoaded", () => {
     lettreContenu.innerHTML = savedText;
   }
 
-  // Bloc admin caché par défaut
-  adminZone.style.display = "none";
-
   // Afficher le bloc admin avec Ctrl + Shift + I
   document.addEventListener("keydown", (e) => {
     if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "i") {
-      adminZone.style.display = "block";
-      alert("Mode admin activé.");
+      if (adminZone) {
+        adminZone.style.display = "block";
+        adminZone.style.animation = "glowFlash 0.8s ease";
+        alert("Mode admin activé.");
+      }
     }
   });
 
