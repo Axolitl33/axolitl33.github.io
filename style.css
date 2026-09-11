@@ -78,10 +78,3 @@ h1, h2 {
   opacity: 1;
   text-shadow: 0 0 8px #00ffff;
 }
-
-.admin-panel input {
-  padding: 8px;
-  border-radius: 8px;
-  border: 1px solid #00ffff;
-  margin: 5px;
-}
