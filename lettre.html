@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lettre de motivation - Nolann Dewulf</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Lettre de motivation</h1>
+    <p>Candidature pour un stage en milieu professionnel.</p>
+  </header>
+
+  <section class="card">
+    <div id="lettre-contenu" contenteditable="false" class="lettre-texte">
+      <p>Madame, Monsieur,</p>
+      <p>
+        Actuellement élève au lycée, je suis à la recherche d’un stage en milieu professionnel
+        afin de découvrir le monde de l’entreprise et de développer mes compétences en informatique
+        et cybersécurité.
+      </p>
+      <p>
+        Sérieux, motivé et curieux, je souhaite intégrer votre structure pour observer et apprendre
+        auprès de professionnels expérimentés.
+      </p>
+      <p>
+        Je reste à votre disposition pour toute information complémentaire.
+      </p>
+      <p>
+        Cordialement,<br>
+        Nolann Dewulf
+      </p>
+    </div>
+  </section>
+
+  <section class="card admin-panel">
+    <button id="admin-login-btn" class="btn">Connexion admin</button>
+    <div id="admin-zone" style="display:none;">
+      <input type="password" id="admin-password" placeholder="Mot de passe admin">
+      <button id="admin-validate-btn" class="btn">Valider</button>
+      <button id="admin-save-btn" class="btn" style="display:none;">Sauvegarder la lettre</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>Lettre de motivation — Nolann Dewulf</p>
+  </footer>
+</body>
+</html>
