@@ -87,19 +87,17 @@ body {
   min-height: 100vh;
 }
 
-/* ========================= */
-/*   CENTRAGE DU TEXTE CV    */
-/* ========================= */
+
 
 .card {
   display: flex;
   flex-direction: column;
-  align-items: center;     /* centre horizontalement */
-  justify-content: center; /* équilibre verticalement */
-  text-align: center;      /* centre le texte */
+  align-items: center;     
+  justify-content: center; 
+  text-align: center;      
 }
 
-/* Paragraphes + listes centrés */
+
 .card p,
 .card ul,
 .card li {
@@ -108,14 +106,14 @@ body {
   padding: 0;
 }
 
-/* Enlève les puces normales */
+
 .card ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-/* ❗ Version qui centre vraiment : puce au-dessus */
+
 .card ul li::before {
   content: "";
   display: block;
