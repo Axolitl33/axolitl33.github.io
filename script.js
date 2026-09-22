@@ -1,5 +1,5 @@
-// ⚠️ Mets ton mot de passe perso ici
-const ADMIN_PASSWORD = "Fvfv324567._.";
+
+const ADMIN_PASSWORD = "JeSuIsL'aDmIn1234";
 
 document.addEventListener("DOMContentLoaded", () => {
   const adminZone = document.getElementById("admin-zone");
@@ -9,17 +9,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const lettreContenu = document.getElementById("lettre-contenu");
   const loginBtn = document.getElementById("admin-login-btn");
 
-  // Cache tout au démarrage
+
   if (loginBtn) loginBtn.style.display = "none";
   if (adminZone) adminZone.style.display = "none";
 
-  // Charger la version sauvegardée si elle existe
+ 
   const savedText = localStorage.getItem("lettre_motivation");
   if (savedText) {
     lettreContenu.innerHTML = savedText;
   }
 
-  // Afficher le bloc admin avec Ctrl + Shift + I
+ 
   document.addEventListener("keydown", (e) => {
     if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "i") {
       if (adminZone) {
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Validation du mot de passe
+
   validateBtn.addEventListener("click", () => {
     if (passwordInput.value === ADMIN_PASSWORD) {
       lettreContenu.contentEditable = "true";
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Sauvegarde du texte
+
   saveBtn.addEventListener("click", () => {
     localStorage.setItem("lettre_motivation", lettreContenu.innerHTML);
     alert("Lettre sauvegardée.");
