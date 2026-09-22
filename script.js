@@ -1,4 +1,3 @@
-
 const ADMIN_PASSWORD = "JeSuIsL'aDmIn1234";
 
 document.addEventListener("DOMContentLoaded", () => {
