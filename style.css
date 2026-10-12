@@ -14,6 +14,7 @@ html, body {
   min-height: 100vh;
   margin: 0;
   padding: 0;
+  color: #fff;
   font-family: 'Poppins', sans-serif;
   text-align: center;
 }
