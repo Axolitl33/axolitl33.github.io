@@ -28,5 +28,7 @@ fetch("https://discord.com/api/guilds/1522903383336292352/widget.json")
     <br>Rejoindre le Discord
 </a>
 </div>
+.then(data => {
+console.log(data);
     `;
 });
