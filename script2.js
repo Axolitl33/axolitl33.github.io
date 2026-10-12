@@ -11,16 +11,15 @@ const categoriesTextuelles = [
     {
         nom: "SALONS TEXTUELS",
         salons: [
-            "💬 discussion",
-            "🔫 recherche-mate",
-            "📷 pfp-idea",
+            "💬 général",
             "📷 média",
             "🎧 vos-playlists",
             "📷 vos-cilps",
             "📢 anonces",
             "🔗 vos-chaines",
             "📜 niveaux",
-            "🎮-idée-de-jeu"
+            "🎮-idée-de-jeu",
+            "⚔️défis-pour-nako"
         ]
     }
 ];
