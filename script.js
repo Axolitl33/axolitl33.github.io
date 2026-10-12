@@ -3,7 +3,7 @@ fetch("https://discord.com/api/guilds/1522903383336292352/widget.json")
     .then(data => {
         // Filtrer ou récupérer les salons (vocaux ou autres selon ce que renvoie le widget)
         const vocaux = data.channels
-            .map(c => `<div class="voice-channel">🎤 ${c.name}</div>`)
+            .map(c => `<div class="voice-channel"> ${c.name}</div>`)
             .join("");
 
         document.getElementById("discord-widget").innerHTML = `
