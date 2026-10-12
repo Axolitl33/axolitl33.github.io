@@ -102,3 +102,105 @@ h1, h2 {
   50% { box-shadow: 0 0 20px #00ffff; }
   100% { box-shadow: 0 0 0px #00ffff; }
 }
+.discord-card{
+    width:100%;
+    max-width:600px;
+
+    background:rgba(0,255,255,0.05);
+    border:1px solid rgba(0,255,255,0.3);
+
+    border-radius:20px;
+
+    padding:20px;
+    margin-top:20px;
+
+    backdrop-filter:blur(12px);
+
+    box-shadow:
+        0 0 20px rgba(0,255,255,0.2),
+        0 0 40px rgba(0,255,255,0.1);
+
+    transition:0.3s;
+}
+
+.discord-card:hover{
+    transform:translateY(-3px);
+    box-shadow:
+        0 0 25px rgba(0,255,255,0.35),
+        0 0 60px rgba(0,255,255,0.2);
+}
+
+.discord-header{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+}
+
+.discord-header h3{
+    color:#00ffff;
+    margin:0;
+}
+
+.discord-dot{
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:#00ff88;
+
+    box-shadow:
+        0 0 10px #00ff88,
+        0 0 20px #00ff88;
+
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+    0%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.3);
+    }
+    100%{
+        transform:scale(1);
+    }
+}
+
+.discord-status{
+    margin:15px 0;
+    color:#dff;
+}
+
+.join-btn{
+    display:inline-block;
+
+    margin-bottom:20px;
+
+    padding:12px 24px;
+
+    color:#00ffff;
+    border:2px solid #00ffff;
+
+    border-radius:999px;
+
+    text-decoration:none;
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.join-btn:hover{
+    background:#00ffff;
+    color:black;
+
+    box-shadow:
+        0 0 20px #00ffff,
+        0 0 40px #00ffff;
+}
+
+.discord-card iframe{
+    border:none;
+    border-radius:14px;
+    overflow:hidden;
+}
