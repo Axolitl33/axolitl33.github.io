@@ -37,7 +37,7 @@ fetch("https://discord.com/api/guilds/1522903383336292352/widget.json")
 
         // Générer le HTML pour les salons vocaux dynamiques (issus de l'API)
         const htmlVocal = data.channels.map(c => `
-            <div class="channel voice-channel">🔊 ${c.name}</div>
+            <div class="channel voice-channel"> ${c.name}</div>
         `).join("");
 
         // Injection dans le DOM
