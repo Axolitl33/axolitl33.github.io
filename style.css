@@ -1,206 +1,304 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
-html {
-  height: 100%;
-}
-body {
-  height: 100%;
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
-  background: radial-gradient(circle at top, #000000 0%, #0a1a1f 60%, #000000 100%);
-  background-size: cover;
-  background-attachment: fixed;
-  color: #fff;
-  font-family: 'Poppins', sans-serif;
-  text-align: center;
-}
+:root{
+    --cyan:#00ffff;
+    --cyan-dark:#00b8b8;
 
+    --yellow:#ffd000;
+    --orange:#ff9900;
 
-header {
-  padding: 60px 20px 20px;
+    --bg1:#000000;
+    --bg2:#071115;
+    --bg3:#0d1d24;
+
+    --glass:rgba(255,255,255,.06);
+    --border:rgba(255,255,255,.12);
 }
 
-h1, h2 {
-  color: #00ffff;
-  text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 40px #00ffff;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-
-.card {
-  background: rgba(255, 255, 255, 0.05);
-  margin: 30px auto;
-  padding: 20px;
-  border-radius: 12px;
-  width: 90%;
-  max-width: 700px;
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;     
-  justify-content: center; 
-  text-align: center;      
+html{
+    min-height:100%;
 }
 
-.card p,
-.card ul,
-.card li {
-  text-align: center;
-  margin: 6px 0;
-  padding: 0;
-}
+body{
+    min-height:100vh;
 
-.card ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+    font-family:'Poppins',sans-serif;
+    color:white;
+    text-align:center;
 
-.card ul li::before {
-  content: "";
-  display: block;
-  height: 0;
-  margin: 0;
-}
+    background:
+    radial-gradient(circle at top,
+    #081d24 0%,
+    #030609 35%,
+    #000000 100%);
 
-.lettre-texte {
-  text-align: left;
-  line-height: 1.6;
+    overflow-x:hidden;
 }
 
 
-.buttons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+
+body::before{
+    content:"";
+    position:fixed;
+
+    inset:0;
+
+    background:
+    radial-gradient(circle at 30% 20%,
+    rgba(0,255,255,.08),
+    transparent 40%),
+
+    radial-gradient(circle at 70% 70%,
+    rgba(255,208,0,.08),
+    transparent 40%);
+
+    animation:bgMove 10s ease-in-out infinite alternate;
+
+    pointer-events:none;
 }
 
-.btn {
-  display: inline-block;
-  padding: 10px 20px;
-  margin: 10px;
-  color: #00ffff;
-  border: 2px solid #00ffff;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.btn:hover {
-  background-color: #00ffff;
-  color: #000;
-  box-shadow: 0 0 20px #00ffff;
+@keyframes bgMove{
+    from{
+        transform:translateY(-20px);
+    }
+    to{
+        transform:translateY(20px);
+    }
 }
 
 
-@keyframes glowFlash {
-  0% { box-shadow: 0 0 0px #00ffff; }
-  50% { box-shadow: 0 0 20px #00ffff; }
-  100% { box-shadow: 0 0 0px #00ffff; }
+
+header{
+    padding:80px 20px 40px;
+
+    font-size:3rem;
+    font-weight:700;
+
+    color:var(--cyan);
+
+    text-shadow:
+    0 0 10px var(--cyan),
+    0 0 25px var(--cyan),
+    0 0 50px var(--cyan);
+
+    animation:glowTitle 4s infinite;
 }
+
+@keyframes glowTitle{
+    50%{
+        text-shadow:
+        0 0 15px var(--cyan),
+        0 0 35px var(--cyan),
+        0 0 70px var(--cyan);
+    }
+}
+
+
+
+.card{
+    width:90%;
+    max-width:900px;
+
+    margin:30px auto;
+    padding:30px;
+
+    border-radius:24px;
+
+    background:var(--glass);
+
+    border:1px solid var(--border);
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:
+    0 0 20px rgba(0,255,255,.15),
+    0 0 60px rgba(0,255,255,.05);
+
+    transition:.4s;
+
+    position:relative;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 0 30px rgba(0,255,255,.3),
+    0 0 80px rgba(0,255,255,.15);
+}
+
+.card::before{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+    right:0;
+
+    height:2px;
+
+    background:
+    linear-gradient(
+    90deg,
+    transparent,
+    var(--cyan),
+    transparent);
+}
+
+.card p{
+    line-height:1.8;
+    margin:10px 0;
+}
+
+
+
+h1,h2,h3{
+    color:var(--cyan);
+
+    text-shadow:
+    0 0 10px var(--cyan);
+}
+
+
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.btn{
+    padding:12px 28px;
+
+    text-decoration:none;
+    color:var(--cyan);
+
+    border:2px solid var(--cyan);
+
+    border-radius:999px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+    background:rgba(0,255,255,.05);
+}
+
+.btn:hover{
+    background:var(--cyan);
+    color:black;
+
+    box-shadow:
+    0 0 15px var(--cyan),
+    0 0 30px var(--cyan),
+    0 0 50px var(--cyan);
+}
+
+
+
 .discord-card{
-    width:100%;
-    max-width:600px;
+    margin-top:25px;
 
-    background:rgba(0,255,255,0.05);
-    border:1px solid rgba(0,255,255,0.3);
+    background:rgba(0,0,0,.35);
 
-    border-radius:20px;
+    border-radius:22px;
+
+    border:1px solid rgba(0,255,255,.2);
 
     padding:20px;
-    margin-top:20px;
-
-    backdrop-filter:blur(12px);
 
     box-shadow:
-        0 0 20px rgba(0,255,255,0.2),
-        0 0 40px rgba(0,255,255,0.1);
-
-    transition:0.3s;
-}
-
-.discord-card:hover{
-    transform:translateY(-3px);
-    box-shadow:
-        0 0 25px rgba(0,255,255,0.35),
-        0 0 60px rgba(0,255,255,0.2);
+    0 0 20px rgba(0,255,255,.2);
 }
 
 .discord-header{
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
     gap:12px;
-}
-
-.discord-header h3{
-    color:#00ffff;
-    margin:0;
+    margin-bottom:10px;
 }
 
 .discord-dot{
     width:12px;
     height:12px;
+
     border-radius:50%;
+
     background:#00ff88;
 
-    box-shadow:
-        0 0 10px #00ff88,
-        0 0 20px #00ff88;
-
     animation:pulse 2s infinite;
+
+    box-shadow:
+    0 0 10px #00ff88,
+    0 0 20px #00ff88;
 }
 
 @keyframes pulse{
-    0%{
-        transform:scale(1);
-    }
     50%{
         transform:scale(1.3);
     }
-    100%{
-        transform:scale(1);
-    }
-}
-
-.discord-status{
-    margin:15px 0;
-    color:#dff;
 }
 
 .join-btn{
     display:inline-block;
 
-    margin-bottom:20px;
+    margin:15px 0;
 
-    padding:12px 24px;
-
-    color:#00ffff;
-    border:2px solid #00ffff;
+    padding:12px 30px;
 
     border-radius:999px;
 
     text-decoration:none;
     font-weight:600;
 
+    color:#000;
+
+    background:linear-gradient(
+    135deg,
+    var(--yellow),
+    var(--orange));
+
     transition:.3s;
 }
 
 .join-btn:hover{
-    background:#00ffff;
-    color:black;
+    transform:scale(1.05);
 
     box-shadow:
-        0 0 20px #00ffff,
-        0 0 40px #00ffff;
+    0 0 20px var(--yellow),
+    0 0 50px var(--orange);
 }
 
 .discord-card iframe{
     border:none;
-    border-radius:14px;
-    overflow:hidden;
+    border-radius:18px;
+    width:100%;
+}
+
+
+
+::-webkit-scrollbar{
+    width:12px;
+}
+
+::-webkit-scrollbar-track{
+    background:#050505;
+}
+
+::-webkit-scrollbar-thumb{
+    background:var(--cyan);
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:white;
 }
