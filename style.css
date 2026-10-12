@@ -202,19 +202,95 @@ h1,h2,h3{
     0 0 50px var(--cyan);
 }
 
-iframe{
+.custom-discord{
+    max-width:450px;
+    margin:auto;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(0,255,255,.2);
+
+    border-radius:30px;
+
+    backdrop-filter:blur(20px);
+
+    overflow:hidden;
+
+    padding:25px;
+
+    box-shadow:
+    0 0 25px rgba(0,255,255,.15);
+}
+
+.server-name{
+    font-size:2rem;
+    font-weight:700;
+
+    color:var(--cyan);
+
+    margin-bottom:20px;
+}
+
+.server-logo{
+    width:120px;
+    height:120px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    margin-bottom:20px;
+
+    border:3px solid var(--cyan);
+
+    box-shadow:
+    0 0 20px var(--cyan);
+}
+
+.stats{
+    padding:15px;
+
+    margin-bottom:20px;
+
     border-radius:20px;
+
+    background:rgba(0,255,255,.08);
 }
 
-
-.discord-card iframe{
-    border-radius:25px;
-    overflow:hidden;
+.stats div{
+    margin:8px 0;
 }
 
-.discord-card{
-    overflow:hidden;
-    border-radius:25px;
+.channels{
+    margin-bottom:20px;
 }
 
-border-radius:24px;
+.voice-channel{
+    padding:10px;
+
+    margin:8px 0;
+
+    border-radius:15px;
+
+    background:rgba(255,255,255,.04);
+}
+
+.join-button{
+    display:block;
+
+    text-decoration:none;
+
+    padding:15px;
+
+    border-radius:20px;
+
+    background:linear-gradient(
+        135deg,
+        #ffd000,
+        #ff9900
+    );
+
+    color:black;
+
+    font-weight:700;
+}
