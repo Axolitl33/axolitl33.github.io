@@ -1,12 +1,12 @@
-// 1. Liste de tes salons textuels et catégories (basée sur tes captures d'écran)
+// 1. Liste de tes salons textuels et catégories
 const categoriesTextuelles = [
     {
         nom: "ACTIVITÉES",
-        salons: [, "👋 bienvenue", "✈️ depart",]
+        salons: ["👋 bienvenue", "✈️ depart"]
     },
     {
         nom: "TICKETS",
-        salons: ["🏷️ tickets",]
+        salons: ["🏷️ tickets"]
     },
     {
         nom: "SALONS TEXTUELS",
@@ -18,8 +18,8 @@ const categoriesTextuelles = [
             "🎧 vos-playlists",
             "📷 vos-cilps",
             "📢 anonces",
-            "🔗 vos-chaines"
-            "📜 niveaux"
+            "🔗 vos-chaines",
+            "📜 niveaux",
             "🎮-idée-de-jeu"
         ]
     }
@@ -71,4 +71,4 @@ fetch("https://discord.com/api/guilds/1522903383336292352/widget.json")
             </div>
         `;
     })
- 
+    .catch(err => console.error("Erreur lors de la récupération du widget :", err));
