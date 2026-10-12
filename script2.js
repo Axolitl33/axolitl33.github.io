@@ -25,7 +25,7 @@ const categoriesTextuelles = [
     }
 ];
 
-fetch("https://discord.com/api/guilds/1522903383336292352/widget.json")
+fetch("https://discord.com/api/guilds/1558568572996026478/widget.json")
     .then(res => res.json())
     .then(data => {
 
