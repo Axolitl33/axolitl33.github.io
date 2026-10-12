@@ -4,7 +4,6 @@ html {
   height: 100%;
 }
 
-
 body {
   min-height: 100vh;
   margin: 0;
@@ -22,6 +21,7 @@ body {
   text-align: center;
 }
 
+
 header {
   padding: 60px 20px 20px;
 }
@@ -30,6 +30,7 @@ h1, h2 {
   color: #00ffff;
   text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 40px #00ffff;
 }
+
 
 .card {
   background: rgba(255, 255, 255, 0.05);
@@ -40,7 +41,41 @@ h1, h2 {
   max-width: 700px;
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
   backdrop-filter: blur(10px);
+  
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;     
+  justify-content: center; 
+  text-align: center;      
 }
+
+.card p,
+.card ul,
+.card li {
+  text-align: center;
+  margin: 6px 0;
+  padding: 0;
+}
+
+.card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card ul li::before {
+  content: "";
+  display: block;
+  height: 0;
+  margin: 0;
+}
+
+.lettre-texte {
+  text-align: left;
+  line-height: 1.6;
+}
+
 
 .buttons {
   display: flex;
@@ -66,10 +101,6 @@ h1, h2 {
   box-shadow: 0 0 20px #00ffff;
 }
 
-.lettre-texte {
-  text-align: left;
-  line-height: 1.6;
-}
 
 .admin-panel {
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
@@ -81,50 +112,8 @@ h1, h2 {
   backdrop-filter: blur(10px);
 }
 
-
 @keyframes glowFlash {
   0% { box-shadow: 0 0 0px #00ffff; }
   50% { box-shadow: 0 0 20px #00ffff; }
   100% { box-shadow: 0 0 0px #00ffff; }
-}
-
-body {
-  background: radial-gradient(circle at top, #000000 0%, #0a1a1f 60%, #000000 100%);
-  background-size: cover;
-  background-attachment: fixed;
-  min-height: 100vh;
-}
-
-
-
-.card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;     
-  justify-content: center; 
-  text-align: center;      
-}
-
-
-.card p,
-.card ul,
-.card li {
-  text-align: center;
-  margin: 6px 0;
-  padding: 0;
-}
-
-
-.card ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-
-.card ul li::before {
-  content: "";
-  display: block;
-  height: 0;
-  margin: 0;
 }
