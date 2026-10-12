@@ -26,7 +26,7 @@ fetch("https://discord.com/api/guilds/1522903383336292352/widget.json")
             </div>
 <a href="${data.instant_invite}" class="join-button" target="_blank">
     <br>Rejoindre le Discord
-[/a]
+</a>
             </a>
         </div>
     `;
