@@ -15,21 +15,21 @@ fetch("https://discord.com/api/guilds/1522903383336292352/widget.json")
                 ${data.name}
             </div>
 
-            <img
-                src="images/logo-discord.png"
-                class="server-logo"
-                alt="Logo serveur">
+            images/logo-discord.png
 
-            <div   <div>⚡ ${data.presence_count} connectés</div>
+            <div class="stats">
+                <div>👥 ${data.members.length} membres visibles</div>
+                <div>⚡ ${data.presence_count} connectés</div>
             </div>
 
             <div class="channels">
                 ${vocaux}
             </div>
 
-            <a
-                href="${data.instant_invite}"
-                target="_blank"
-     </div>
+            ${data.instant_invite}
+                Rejoindre le Discord
+            </a>
+
+        </div>
     `;
 });
