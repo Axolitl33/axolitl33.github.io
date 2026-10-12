@@ -47,7 +47,7 @@ fetch("https://discord.com/api/guilds/1522903383336292352/widget.json")
                 <div class="server-name">${data.name}</div>
 
                 <div class="logo-container">
-                    <img src="images/logo-discord.png" alt="Logo Discord" class="discord-logo" onerror="this.style.display='none'">
+                    <img src="https://cdn.discordapp.com/icons/1522903383336292352/2faaec7356557b37aea6e653b01680ce.webp?size=1024" alt="Logo Discord" class="discord-logo" onerror="this.style.display='none'">
                 </div>
 
                 <div class="stats">
