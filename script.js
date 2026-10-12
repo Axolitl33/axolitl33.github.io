@@ -4,7 +4,6 @@ fetch("https://discord.com/api/guilds/1522903383336292352/widget.json")
 
     const vocaux = data.channels
         .filter(c => c.position >= 0)
-        .slice(0, 3)
         .map(c => `<div class="voice-channel">🎤 ${c.name}</div>`)
         .join("");
 
@@ -25,11 +24,10 @@ fetch("https://discord.com/api/guilds/1522903383336292352/widget.json")
             <div class="channels">
                 ${vocaux}
             </div>
-
-            ${data.instant_invite}
-                Rejoindre le Discord
+<a href="${data.instant_invite}" class="join-button" target="_blank">
+    <br>Rejoindre le Discord
+[/a]
             </a>
-
         </div>
     `;
 });
