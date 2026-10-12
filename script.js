@@ -24,9 +24,10 @@ fetch("https://discord.com/api/guilds/1522903383336292352/widget.json")
             <div class="channels">
                 ${vocaux}
             </div>
-<a href="${data.instant_invite}" class="join-button" target="_blank">
+<div>
+<a href="${data.instant_invite}" class="join-button" target="_blank"></a>
     <br>Rejoindre le Discord
-</a>
+
 </div>
 .then(data => {
 console.log(data);
