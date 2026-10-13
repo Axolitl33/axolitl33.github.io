@@ -15,7 +15,7 @@ jobs:
       - name: Installer Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          node-version: '20'
 
       - name: Installer les dépendances (discord.js)
         run: npm install
