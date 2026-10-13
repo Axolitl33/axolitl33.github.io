@@ -31,7 +31,7 @@ body{
     font-family:'Poppins',sans-serif;
     color:white;
     text-align:center;
-
+  
     background:
     radial-gradient(circle at top,
     #081d24 0%,
@@ -77,11 +77,11 @@ body::before{
 header{
    header{
     padding:80px 20px 40px;
-    /* Supprime le font-size: 3rem d'ici */
+
 }
 
 header h1 {
-    font-size:; /* Déplace-le sur le titre directement */
+    font-size:;
     font-weight:  700;
     color: var(--cyan);
     text-shadow: 
@@ -292,6 +292,8 @@ h1,h2,h3{
         #ffd000,
         #ff9900
     );
+    ul, ol { list-style: none;
+}
 
     color:black;
 
