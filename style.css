@@ -76,12 +76,12 @@ body::before{
 
 header{
    header{
-    padding:80px 20px;
+    padding:80px 20px 40px;
     /* Supprime le font-size: 3rem d'ici */
 }
 
 header h1 {
-    font-size: 3rem; /* Déplace-le sur le titre directement */
+    font-size:; /* Déplace-le sur le titre directement */
     font-weight:  700;
     color: var(--cyan);
     text-shadow: 
