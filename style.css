@@ -75,19 +75,22 @@ body::before{
 
 
 header{
+   header{
     padding:80px 20px 40px;
+    /* Supprime le font-size: 3rem d'ici */
+}
 
-    font-size:3rem;
-    font-weight:700;
+header h1 {
+    font-size: 3rem; /* Déplace-le sur le titre directement */
+    font-weight:  700;
+    color: var(--cyan);
+    text-shadow: 
+        0 0 10px var(--cyan),
+        0 0 25px var(--cyan),
+        0 0 50px var(--cyan);
+    animation: glowTitle 4s infinite;
+}
 
-    color:var(--cyan);
-
-    text-shadow:
-    0 0 10px var(--cyan),
-    0 0 25px var(--cyan),
-    0 0 50px var(--cyan);
-
-    animation:glowTitle 4s infinite;
 }
 
 @keyframes glowTitle{
