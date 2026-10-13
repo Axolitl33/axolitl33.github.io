@@ -292,9 +292,17 @@ h1,h2,h3{
         #ffd000,
         #ff9900
     );
-    ul, ol { list-style: none;
+    
+ul {
+    list-style-type: none;
+    padding-left: 0; /* Optionnel : pour enlever le décalage vers la droite */
 }
 
+.sans-puces {
+    list-style-type: none;
+    padding-left: 0;
+}
+    
     color:black;
 
     font-weight:700;
