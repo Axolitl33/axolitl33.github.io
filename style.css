@@ -295,8 +295,7 @@ h1,h2,h3{
     
 ul {
     list-style-type: none;
-    padding-left: 0; /* Optionnel : pour enlever le décalage vers la droite */
-}
+    padding-left: 0;
 
 .sans-puces {
     list-style-type: none;
