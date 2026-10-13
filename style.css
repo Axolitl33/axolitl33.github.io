@@ -276,33 +276,21 @@ h1,h2,h3{
     border-radius:15px;
 
     background:rgba(255,255,255,.04);
-}
-
 .join-button{
     display:block;
-
     text-decoration:none;
-
     padding:15px;
-
     border-radius:20px;
-
     background:linear-gradient(
         135deg,
         #ffd000,
         #ff9900
     );
-    
-ul {
-    list-style-type: none;
-    padding-left: 0;
-
-.sans-puces {
-    list-style-type: none;
-    padding-left: 0;
-}
-    
     color:black;
-
     font-weight:700;
+}
+
+ul, .sans-puces {
+    list-style-type: none;
+    padding-left: 0;
 }
