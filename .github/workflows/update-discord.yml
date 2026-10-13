@@ -1,0 +1,32 @@
+name: Mettre à jour les données Discord
+
+on:
+  schedule:
+    - cron: '0 * * * *' # S'exécute automatiquement toutes les heures
+  workflow_dispatch: # Permet aussi de le lancer manuellement depuis l'onglet Actions de GitHub
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le code du dépôt
+        uses: actions/checkout@v4
+
+      - name: Installer Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Installer les dépendances (discord.js)
+        run: npm install
+
+      - name: Lancer le bot pour générer le JSON
+        env:
+          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+        run: node index.js
+
+      - name: Sauvegarder automatiquement le fichier server-data.json sur le dépôt
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "🤖 Mise automatique des données Discord"
+          file_pattern: server-data.json
