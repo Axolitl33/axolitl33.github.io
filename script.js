@@ -1,74 +1,71 @@
-// 1. Liste de tes salons textuels et catégories
-const categoriesTextuelles = [
-    {
-        nom: "ACTIVITÉES",
-        salons: ["👋 bienvenue", "✈️ depart"]
-    },
-    {
-        nom: "TICKETS",
-        salons: ["🏷️ tickets"]
-    },
-    {
-        nom: "SALONS TEXTUELS",
-        salons: [
-            "💬 discussion",
-            "🔫 recherche-mate",
-            "📷 pfp-idea",
-            "📷 média",
-            "🎧 vos-playlists",
-            "📷 vos-cilps",
-            "📢 anonces",
-            "🔗 vos-chaines",
-            "📜 niveaux",
-            "🎮-idée-de-jeu"
-        ]
+const { Client, GatewayIntentBits } = require('discord.js');
+const fs = require('fs');
+
+const client = new Client({
+    intents: [
+        GatewayIntentBits.Guilds,
+        GatewayIntentBits.GuildMembers,
+        GatewayIntentBits.GuildPresences
+    ]
+});
+
+// GitHub injectera automatiquement le secret ici
+const TOKEN = process.env.DISCORD_TOKEN;
+const GUILD_ID = '1522903383336292352';
+
+client.once('ready', async () => {
+    console.log(`✅ Connecté en tant que ${client.user.tag} !`);
+    await exportServerData();
+    client.destroy(); // Ferme proprement la connexion une fois le fichier généré
+    process.exit(0);
+});
+
+async function exportServerData() {
+    const guild = client.guilds.cache.get(GUILD_ID);
+    if (!guild) {
+        console.log("⚠️ Serveur introuvable.");
+        return;
     }
-];
 
-fetch("https://discord.com/api/guilds/1522903383336292352/widget.json")
-    .then(res => res.json())
-    .then(data => {
+    let inviteUrl = `https://discord.gg/${GUILD_ID}`;
+    try {
+        const invites = await guild.invites.fetch();
+        const existingInvite = invites.first();
+        if (existingInvite) {
+            inviteUrl = existingInvite.url;
+        }
+    } catch (e) {
+        console.log("⚠️ Impossible de récupérer l'invitation, utilisation du lien par défaut.");
+    }
 
-        // Générer le HTML pour les salons textuels
-        const htmlTextuel = categoriesTextuelles.map(cat => `
-            <div class="category-title">${cat.nom}</div>
-            ${cat.salons.map(s => `<div class="channel text-channel"># ${s}</div>`).join("")}
-        `).join("");
+    const presenceCount = guild.members.cache.filter(m => m.presence && m.presence.status !== 'offline').size;
 
-        // Générer le HTML pour les salons vocaux dynamiques (issus de l'API)
-        const htmlVocal = data.channels.map(c => `
-            <div class="channel voice-channel"> ${c.name}</div>
-        `).join("");
+    const channelsData = [];
+    guild.channels.cache.forEach(c => {
+        channelsData.push({
+            id: c.id,
+            name: c.name,
+            type: c.type,
+            position: c.rawPosition,
+            parentId: c.parentId || null
+        });
+    });
 
-        // Injection dans le DOM
-        document.getElementById("discord-widget").innerHTML = `
-            <div class="custom-discord">
+    const dataToSave = {
+        name: guild.name,
+        memberCount: guild.memberCount,
+        presenceCount: presenceCount,
+        instant_invite: inviteUrl,
+        channels: channelsData
+    };
 
-                <div class="server-name">${data.name}</div>
+    fs.writeFileSync('server-data.json', JSON.stringify(dataToSave, null, 2));
+    console.log("📁 Fichier server-data.json généré avec succès !");
+}
 
-                <div class="logo-container">
-                    <img src="https://cdn.discordapp.com/icons/1522903383336292352/2faaec7356557b37aea6e653b01680ce.webp?size=524" alt="Logo Discord" class="discord-logo" onerror="this.style.display='none'">
-                </div>
+if (!TOKEN) {
+    console.error("❌ Erreur : Aucun token fourni.");
+    process.exit(1);
+}
 
-                <div class="stats">
-                    <div>👥 ${data.members.length} membres visibles</div>
-                    <div>⚡ ${data.presence_count} connectés</div>
-                </div>
-
-                <div class="channels-container">
-                    <!-- Salons Textuels -->
-                    ${htmlTextuel}
-
-                    <!-- Salons Vocaux -->
-                    <div class="category-title">VOC PUBLIC</div>
-                    ${htmlVocal}
-                </div>
-
-                <div class="join-container">
-                    <a href="${data.instant_invite}" class="join-button" target="_blank">Rejoindre le Discord</a>
-                </div>
-
-            </div>
-        `;
-    })
-    .catch(err => console.error("Erreur lors de la récupération du widget :", err));
+client.login(TOKEN);
