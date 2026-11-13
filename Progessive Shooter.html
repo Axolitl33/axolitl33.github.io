@@ -1,4 +1,3 @@
-<p>adévoloppé, attendez un peu</p>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -10,8 +9,10 @@
 <body>
 
     <header>
-        <h1>PROGRESSE-SHOOTER</h1>
-        <p>Monte de niveau, débloque des capacités et domine l'arène avec tes Pets.</p>
+        <!-- Le Logo -->
+        <img src="images/logo.jpg" alt="Logo Progresse-Shooter" style="max-width: 100%; width: 600px; margin-bottom: 20px;">
+        
+        <p style="font-weight: 600; color: var(--yellow); letter-spacing: 2px;">EVOLVE. DEFEAT. REPEAT.</p>
         
         <div class="buttons" style="margin-top: 30px;">
             <a href="https://www.roblox.com" class="btn" target="_blank">🎮 JOUER SUR ROBLOX</a>
@@ -20,41 +21,38 @@
     </header>
 
     <main>
+        <!-- L'image de l'arène en grand -->
+        <div class="card" style="padding: 10px; background: transparent;">
+            <img src="images/arena.jpg" alt="Arène de Progresse-Shooter" style="width: 100%; border-radius: 16px; display: block;">
+        </div>
+
         <!-- Section Présentation / Fonctionnalités -->
         <section id="features">
             <h2 style="margin-top: 50px; font-size: 2rem;">Le Concept</h2>
             
             <div class="card">
                 <h3>🚀 Un FPS avec de la Progression</h3>
-                <p>Progresse-Shooter n'est pas un simple jeu de tir. Gagne de l'XP à chaque kill (et un gros bonus si tu élimines un joueur plus haut niveau que toi !), monte en level et débloque des pièces pour acheter de nouveaux équipements.</p>
+                <p>Progresse-Shooter n'est pas un simple jeu de tir. Gagne de l'XP à chaque kill (et un gros bonus de 15 XP si tu élimines un joueur plus haut niveau que toi !), monte en level et débloque des pièces pour acheter de nouveaux équipements.</p>
             </div>
 
+            <!-- Intégration du Pet -->
             <div class="card">
                 <h3>🐾 Les Pets</h3>
+                <img src="images/pet.jpg" alt="Pet Robot" style="width: 100%; max-width: 400px; margin: 20px auto; display: block; border-radius: 20px;">
                 <p>Utilise tes pièces durement gagnées dans la boutique pour obtenir des Pets. Mais attention, ils ne sont pas juste mignons ! Ils te donnent des capacités passives uniques pour t'aider à dominer les combats.</p>
             </div>
 
+            <!-- Intégration du Dash -->
             <div class="card">
                 <h3>⚡ Gameplay nerveux</h3>
+                <img src="images/dash.jpg" alt="Dash en action" style="width: 100%; border-radius: 16px; margin: 20px 0;">
                 <p>Utilise ton Dash pour esquiver les balles, maîtrise tes 4 emplacements d'armes et déclenche tes capacités spéciales pour enchaîner les Kill Streaks !</p>
-            </div>
-        </section>
-
-        <!-- Section Armes et Stats -->
-        <section>
-            <h2 style="margin-top: 50px; font-size: 2rem;">Ton Arsenal</h2>
-            <div class="card">
-                <ul class="sans-puces">
-                    <li>🔫 <strong>Armes 1 à 4 :</strong> Adapte ton style de jeu avec un inventaire complet.</li>
-                    <li>🛡️ <strong>Bouclier & Vie :</strong> Gère ta barre de vie (100) et ton bouclier (50).</li>
-                    <li>💨 <strong>Charge - Dash :</strong> Une jauge de 3 à 5 secondes pour te déplacer à la vitesse de l'éclair.</li>
-                </ul>
             </div>
         </section>
 
         <!-- Call to Action Final -->
         <section style="text-align: center; margin: 80px 0;">
-            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Prêt à rejoindre la bataille ?</h2>
+            <h2 style="font-size: 2.5rem; margin-bottom: 20px; color: var(--yellow); text-shadow: 0 0 15px var(--yellow);">Prêt à rejoindre la bataille ?</h2>
             <a href="https://www.roblox.com" class="btn" target="_blank" style="font-size: 1.2rem; padding: 15px 40px;">JOUER MAINTENANT</a>
         </section>
 
